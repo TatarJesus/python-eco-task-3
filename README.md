@@ -1,28 +1,36 @@
-# python-eco-task-3
+## REST. FastAPI. Swagger
 
-## Описание
-Реализация REST API для простого глоссария.
+### Описание выполнения работы
 
+1. Структура файлов
 
-Поддерживаемые операции:
-- Получение списка всех терминов: `GET /terms`
-- Получение информации о термине по ключу: `GET /terms/{keyword}`
-- Добавление нового термина: `POST /terms` (JSON `{ "keyword": "...", "description": "..." }`)
-- Обновление существующего термина: `PUT /terms/{keyword}` (JSON `{ "description": "..." }`)
-- Удаление термина: `DELETE /terms/{keyword}`
+![Structure](images/structure.png)
 
+2. Инструкция по запуску
 
-Применяются Pydantic/SQLModel для валидации и схем.
+* Создание и активация виртуального окружения Python:
 
+```shell
+python -m venv venv
+venv\Scripts\activate
+```
 
-## Запуск локально
+* Установка пакетов:
 
-
-1. Клонировать репозиторий
-2. Создать виртуальное окружение и установить зависимости
-
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
+```shell
 pip install -r requirements.txt
+```
+
+* Запуск сервера:
+
+```shell
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
+## Получение элемента по ключу
+
+![Get by key](images/get-by-key.png)
+
+## Логи сервера
+
+![Logs](images/logs.png)
